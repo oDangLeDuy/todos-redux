@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from '../constants';
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../constants';
 
 const todos = (state = [], action) => {
   switch (action.type) {
@@ -16,6 +16,10 @@ const todos = (state = [], action) => {
         (todo.id === action.id)
           ? {...todo, completed: !todo.completed}
           : todo
+      )
+    case DELETE_TODO:
+      return state.filter(todo =>
+        (todo.id !== action.id)
       )
     default:
       return state
