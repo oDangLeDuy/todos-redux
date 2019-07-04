@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Todo = ({ onClick, completed, text }) => (
+const Todo = ({ toggleTodo, completed, text }) => (
   <li
-    onClick={onClick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'
     }}
   >
+    <input type='checkbox' defaultChecked={completed} onClick={toggleTodo} />
     {text}
   </li>
 )
