@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Todo = ({ toggleTodo, completed, text, deleteTodo }) => (
   <li
@@ -18,6 +18,6 @@ Todo.propTypes = {
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   deleteTodo: PropTypes.func.isRequired,
-}
+};
 
-export default Todo
+export default Todo;
