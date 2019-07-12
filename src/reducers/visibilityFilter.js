@@ -5,7 +5,7 @@ const visibilityFilter = (type = SHOW_ALL, action) => {
     case SET_VISIBILITY_FILTER:
       return action.filter
     default:
-      return type 
+      return type
   }
 }
 

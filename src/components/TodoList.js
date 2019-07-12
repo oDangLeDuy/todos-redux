@@ -6,7 +6,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => (
   <ul>
     {todos.map(todo =>
       <Todo
-        key={todo.id}
+        key={todo._id}
         {...todo}
         toggleTodo={() => toggleTodo(todo.id)}
         deleteTodo={() => deleteTodo(todo.id)}
@@ -17,9 +17,9 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => (
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    _id: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
+    content: PropTypes.string.isRequired
   }).isRequired).isRequired,
   toggleTodo: PropTypes.func.isRequired,
   deleteTodo: PropTypes.func.isRequired,

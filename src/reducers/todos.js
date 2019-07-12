@@ -1,7 +1,12 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../constants';
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO, GET_TODOS_SUCCESS } from '../constants';
 
 const todos = (state = [], action) => {
   switch (action.type) {
+    case GET_TODOS_SUCCESS:
+      return [
+        ...state,
+        ...action.todos.data
+      ]
     case ADD_TODO:
       return [
         ...state,

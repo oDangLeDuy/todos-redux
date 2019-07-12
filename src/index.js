@@ -6,6 +6,10 @@ import { Provider } from 'react-redux';
 import App from './App';
 import rootReducer from './reducers';
 import rootSaga from './sagas';
+import getTodos from './actions/getTodos';
+import axios from 'axios';
+
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_HOST;
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -15,6 +19,8 @@ const store = createStore(
 )
 
 sagaMiddleware.run(rootSaga);
+
+store.dispatch(getTodos());
 
 render(
   <Provider store={store}>
