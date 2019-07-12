@@ -1,8 +1,8 @@
-import { DELETE_TODO } from '../constants';
+import { DELETE_TODO_REQUEST } from '../constants';
 
-const deleteTodo = id => ({
-  type: DELETE_TODO,
-  id
+const deleteTodo = _id => ({
+  type: DELETE_TODO_REQUEST,
+  _id,
 });
 
 export default deleteTodo;

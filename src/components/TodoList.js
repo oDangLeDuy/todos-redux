@@ -8,8 +8,8 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => (
       <Todo
         key={todo._id}
         {...todo}
-        toggleTodo={() => toggleTodo(todo.id)}
-        deleteTodo={() => deleteTodo(todo.id)}
+        toggleTodo={() => toggleTodo(todo._id, todo.completed)}
+        deleteTodo={() => deleteTodo(todo._id)}
       />
     )}
   </ul>

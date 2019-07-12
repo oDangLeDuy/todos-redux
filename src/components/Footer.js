@@ -2,7 +2,6 @@ import React from 'react';
 import FilterLink from '../containers/FilterLink';
 import { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } from '../constants';
 
-
 const Footer = () => (
   <div>
     <span>Show: </span>

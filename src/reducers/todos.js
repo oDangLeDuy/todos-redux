@@ -1,30 +1,32 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO, GET_TODOS_SUCCESS } from '../constants';
+import { 
+  ADD_TODO_SUCCESS, 
+  UPDATE_TODO_SUCCESS, 
+  DELETE_TODO_SUCCESS, 
+  GET_TODOS_SUCCESS,
+} from '../constants';
 
 const todos = (state = [], action) => {
   switch (action.type) {
     case GET_TODOS_SUCCESS:
-      return [
-        ...state,
-        ...action.todos.data
-      ]
-    case ADD_TODO:
+      return action.todos.data
+    case ADD_TODO_SUCCESS:
       return [
         ...state,
         {
-          id: action.id,
-          text: action.text,
-          completed: false
+          _id: action.todo._id,
+          content: action.todo.content,
+          completed: action.todo.completed
         }
       ]
-    case TOGGLE_TODO:
+    case UPDATE_TODO_SUCCESS:
       return state.map(todo =>
-        (todo.id === action.id)
-          ? {...todo, completed: !todo.completed}
+        (todo._id === action.todo._id)
+          ? {...action.todo}
           : todo
       )
-    case DELETE_TODO:
+    case DELETE_TODO_SUCCESS:
       return state.filter(todo =>
-        (todo.id !== action.id)
+        (todo._id !== action.todo._id)
       )
     default:
       return state
