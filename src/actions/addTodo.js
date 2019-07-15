@@ -1,10 +1,10 @@
-import { ADD_TODO } from '../constants';
+import { ADD_TODO_REQUEST } from '../constants';
 
-let nextTodoId = 0
-const addTodo = text => ({
-  type: ADD_TODO,
-  id: nextTodoId++,
-  text
+const addTodo = content => ({
+  type: ADD_TODO_REQUEST,
+  payload: {
+    content,
+  }
 });
 
 export default addTodo;
